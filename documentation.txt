@@ -1,0 +1,36 @@
+//Documentation 
+
+//ninjas (angular app)
+structure 
+    is framework
+        has 
+            dashboard
+                page header 
+                theNinjas
+                insights (total projects, people, skill types)
+             
+            manage
+                page header 
+                CRUD 
+
+
+            people cards 
+                has 
+                    people
+                        skills 
+                        projects
+
+            manage 
+                has 
+                    CRUD 
+                        people 
+                        skills 
+                        projects 
+            
+//mongo-mongoose 
+
+
+//express
+
+PICK UP Point 
+9.2.1
