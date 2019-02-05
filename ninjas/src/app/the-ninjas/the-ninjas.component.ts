@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { NinjaDataService } from '../ninja-data.service';
+import { Title } from '@angular/platform-browser';
 
 
 export class Ninja {
@@ -10,6 +11,7 @@ export class Ninja {
   skills: string[];
   projects: string[];
   ninjaRating: number;
+  projectDetails: string[]
 }
 
 @Component({

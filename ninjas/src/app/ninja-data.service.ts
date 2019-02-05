@@ -22,6 +22,15 @@ export class NinjaDataService {
       .then(response => response as Ninja[])
       .catch(this.handleError);
     }
+    //Method to get ninja details 
+    public getNinjaById(ninjaId: string): Promise<Ninja> { 
+      const url: string = `${this.apiBaseUrl}/ninjas/${ninjaId}`;
+      return this.http
+      .get(url)
+      .toPromise()
+      .then(response => response as Ninja)
+      .catch(this.handleError);
+    }
 
     private handleError(error: any): Promise<any> {
       console.error('Well, this is embarassing, something is wrong', error);

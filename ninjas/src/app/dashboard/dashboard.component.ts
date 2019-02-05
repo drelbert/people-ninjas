@@ -19,5 +19,4 @@ export class DashboardComponent implements OnInit {
       title: 'Dashboard'
     }
   }
-
 }

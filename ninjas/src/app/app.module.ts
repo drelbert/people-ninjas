@@ -38,6 +38,10 @@ import { DetailsPageComponent } from './details-page/details-page.component';
       {
         path: 'manage',
         component: ManageComponent
+      },
+      {
+        path: 'ninja/:ninjaId',
+        component: DetailsPageComponent
       }
     ])
   ],
