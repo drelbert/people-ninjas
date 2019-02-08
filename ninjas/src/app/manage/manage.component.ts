@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+
+
 
 @Component({
   selector: 'app-manage',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManageComponent implements OnInit {
 
+  
+
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+
+  }
+
 
   public pageContent = {
     header: {

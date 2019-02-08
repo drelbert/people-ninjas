@@ -1,18 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { NinjaDataService } from '../ninja-data.service';
-import { Title } from '@angular/platform-browser';
+import { Ninja } from '../ninja';
 
 
-export class Ninja {
-  _id: string;
-  name: string;
-  team: string;
-  skills: string[];
-  projects: string[];
-  ninjaRating: number;
-  projectDetails: string[]
-}
 
 @Component({
   selector: 'app-the-ninjas',

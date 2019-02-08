@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Ninja } from './the-ninjas/the-ninjas.component';
+import { Ninja, ProjectDetails } from './ninja';
 
 
 
@@ -30,6 +30,16 @@ export class NinjaDataService {
       .toPromise()
       .then(response => response as Ninja)
       .catch(this.handleError);
+    }
+
+    //Method to post new project
+    public addProjectByNinjaId(ninjaId: string, formData: ProjectDetails): Promise<ProjectDetails> {
+      const url: string = `${this.apiBaseUrl}/ninjas/${ninjaId}/projectDetails`;
+      return this.http  
+        .post(url, formData)
+        .toPromise()
+        .then(response => response as ProjectDetails)
+        .catch(this.handleError);
     }
 
     private handleError(error: any): Promise<any> {

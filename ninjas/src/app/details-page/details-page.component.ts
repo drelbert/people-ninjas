@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { NinjaDataService } from '../ninja-data.service';
-import { Ninja } from '../the-ninjas/the-ninjas.component';
+import { Ninja } from '../ninja';
 import { switchMap } from 'rxjs/operators';
 
 

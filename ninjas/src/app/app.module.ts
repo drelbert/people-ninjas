@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import { InsightsSidebarComponent } from './insights-sidebar/insights-sidebar.co
 import { NinjaDetailsComponent } from './ninja-details/ninja-details.component';
 import { DetailsPageComponent } from './details-page/details-page.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,12 +26,15 @@ import { DetailsPageComponent } from './details-page/details-page.component';
     PageHeaderComponent,
     InsightsSidebarComponent,
     NinjaDetailsComponent,
-    DetailsPageComponent
+    DetailsPageComponent,
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       {
         path: '',
