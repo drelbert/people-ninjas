@@ -13,8 +13,8 @@ export class ProjectDetails {
     team: string;
     skills: string[];
     projects: string[];
-    projectDetail: ProjectDetails[];
     ninjaRating: number;
+    projectDetails: any[];
   }
 
   

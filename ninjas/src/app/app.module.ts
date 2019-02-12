@@ -14,6 +14,7 @@ import { PageHeaderComponent } from './page-header/page-header.component';
 import { InsightsSidebarComponent } from './insights-sidebar/insights-sidebar.component';
 import { NinjaDetailsComponent } from './ninja-details/ninja-details.component';
 import { DetailsPageComponent } from './details-page/details-page.component';
+import { DueNextFirstPipe } from './due-next-first.pipe';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { DetailsPageComponent } from './details-page/details-page.component';
     InsightsSidebarComponent,
     NinjaDetailsComponent,
     DetailsPageComponent,
+    DueNextFirstPipe,
    
   ],
   imports: [

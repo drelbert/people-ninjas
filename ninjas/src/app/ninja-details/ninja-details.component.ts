@@ -12,9 +12,10 @@ export class NinjaDetailsComponent implements OnInit {
 
 
 
-  @Input() ninja: Ninja;
-
-  public newProject: ProjectDetails = {
+@Input() ninja: Ninja;
+//Object for submitted form data for passing around. 
+//Is a newProject, has properties, title, updatedBy, etc.
+public newProject: ProjectDetails = {
     title: '',
     updatedBy: '',
     completedLastWeek: '',
@@ -23,14 +24,15 @@ export class NinjaDetailsComponent implements OnInit {
     projectDue: new Date()
   };
 
-  public formVisible: boolean = false;
-  public formError: string;
-
-  constructor(private ninjaDataService: NinjaDataService) { }
+  
+//Making the data service available.
+constructor(private ninjaDataService: NinjaDataService) { }
 
   ngOnInit() {
   }
 
+public formVisible: boolean = false;
+public formError: string;
 
 private formIsValid(): boolean {
   if (this.newProject.title && this.newProject.updatedBy && this.newProject.completedLastWeek && this.newProject.upcomingWork && this.newProject.issues && this.newProject.projectDue) {
@@ -40,14 +42,24 @@ private formIsValid(): boolean {
   }
 }
 
-public onProjectSubmit(): void {
+private resetAndHideProjectForm(): void {
+  this.formVisible = false;
+  this.newProject.title = '';
+  this.newProject.updatedBy = '';
+  this.newProject.completedLastWeek = '';
+  this.newProject.upcomingWork = '';
+  this.newProject.issues = '';
+  this.newProject.projectDue = new Date;
+}
+
+public newProjectSubmit(): void {
   this.formError = '';
   if (this.formIsValid()) {
+    console.log(this.newProject);
     this.ninjaDataService.addProjectByNinjaId(this.ninja._id, this.newProject)
-      .then((projectDetails: ProjectDetails) => {
-        let projectDetail = this.ninja.projectDetail.slice(0);
-        projectDetail.unshift(projectDetails);
-        this.ninja.projectDetail = projectDetail;
+      .then(projectDetail => {
+        console.log('Review saved Jerr.', projectDetail);
+        //this.ninja.projectDetails.unshift(projectDetail);
         this.resetAndHideProjectForm();
       });
     } else {
@@ -55,14 +67,15 @@ public onProjectSubmit(): void {
     }
   }
 
+}
 
-    private resetAndHideProjectForm(): void {
-      this.formVisible = false;
-      this.newProject.title = '';
-      this.newProject.updatedBy = '';
-      this.newProject.completedLastWeek = '';
-      this.newProject.upcomingWork = '';
-      this.newProject.issues = '';
-      this.newProject.projectDue = new Date;
-    }
-  }
+
+/*
+Old code snippet for newProjectSubmit()
+      .then((projectDetails: ProjectDetails) => {
+        console.log('Project Saved Jerr', projectDetails)
+        let projectDetail = this.ninja.projectDetail.slice(0);
+        projectDetail.unshift(projectDetails);
+        this.ninja.projectDetail = projectDetail;
+        this.resetAndHideProjectForm();
+*/

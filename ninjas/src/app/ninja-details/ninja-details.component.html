@@ -33,7 +33,7 @@
           <button (click)="formVisible=true" class="btn btn-primary float-right">Add</button>
           <h2 class="card-title">Add A Project</h2>
           <div *ngIf="formVisible">
-            <form (ngSubmit)="onProjectSubmit()">
+            <form (ngSubmit)="newProjectSubmit()">
               <hr>
               <div *ngIf="formError" class="alert alert-danger" role="alert">
                 {{ formError }}
