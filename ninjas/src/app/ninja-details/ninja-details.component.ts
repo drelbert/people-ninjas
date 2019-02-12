@@ -23,6 +23,7 @@ export class NinjaDetailsComponent implements OnInit {
     projectDue: new Date()
   };
 
+
   public formVisible: boolean = false;
   public formError: string;
 
@@ -39,6 +40,8 @@ private formIsValid(): boolean {
     return false;
   }
 }
+
+
 
 public onProjectSubmit(): void {
   this.formError = '';
