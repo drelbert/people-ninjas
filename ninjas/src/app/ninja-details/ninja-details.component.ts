@@ -24,9 +24,17 @@ public newProject: ProjectDetails = {
     projectDue: new Date()
   };
 
+<<<<<<< HEAD
   
 //Making the data service available.
 constructor(private ninjaDataService: NinjaDataService) { }
+=======
+
+  public formVisible: boolean = false;
+  public formError: string;
+
+  constructor(private ninjaDataService: NinjaDataService) { }
+>>>>>>> e96dffc4520a143c95466867e335d19116101744
 
   ngOnInit() {
   }
@@ -42,6 +50,7 @@ private formIsValid(): boolean {
   }
 }
 
+<<<<<<< HEAD
 private resetAndHideProjectForm(): void {
   this.formVisible = false;
   this.newProject.title = '';
@@ -53,6 +62,11 @@ private resetAndHideProjectForm(): void {
 }
 
 public newProjectSubmit(): void {
+=======
+
+
+public onProjectSubmit(): void {
+>>>>>>> e96dffc4520a143c95466867e335d19116101744
   this.formError = '';
   if (this.formIsValid()) {
     console.log(this.newProject);
