@@ -1,4 +1,5 @@
 export class ProjectDetails {
+    _id: string;
     title: string;
     updatedBy: string;
     completedLastWeek: string;

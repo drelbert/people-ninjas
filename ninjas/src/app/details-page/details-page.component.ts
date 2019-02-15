@@ -30,7 +30,9 @@ export class DetailsPageComponent implements OnInit {
       )
     .subscribe((ninjaDetails: Ninja) => {
       this.ninjaDetails = ninjaDetails;
+
       this.pageContent.header.title = ninjaDetails.name;
+      
       this.pageContent.sidebar = `The Ninja rating for ${ninjaDetails.name} is "${ninjaDetails.ninjaRating}."`;
     });
   }

@@ -32,8 +32,9 @@ export class NinjaDataService {
       .catch(this.handleError);
     }
 
+
     //Method to update project
-  
+
 
     //Method to post new project
     public addProjectByNinjaId(ninjaId: string, formData: ProjectDetails): Promise<ProjectDetails> {

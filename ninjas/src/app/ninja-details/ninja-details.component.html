@@ -9,6 +9,8 @@
     </div>
   </div>
 </div>
+
+
 <h4><b>Projects:</b></h4>
   <div class="row">
     <a *ngFor="let project of ninja.projectDetails" class="col 4"> 
@@ -27,7 +29,6 @@
 </div>
 
 
-
 <div class="row">
     <div class="col-12">
       <div class="card card-primary project-card">
@@ -35,7 +36,7 @@
           <button (click)="formVisible=true" class="btn btn-primary float-right">Add</button>
           <h2 class="card-title">Add A Project</h2>
           <div *ngIf="formVisible">
-            <form (ngSubmit)="newProjectSubmit()">
+            <form (ngSubmit)="onProjectSubmit()">
               <hr>
               <div *ngIf="formError" class="alert alert-danger" role="alert">
                 {{ formError }}
@@ -84,7 +85,10 @@
     </div>
 
 
+    <app-page-header [content]="pageContent.header"></app-page-header>
 
-  
+    <div class="row"><div class="col-12 col-md-8">
+      <app-project-edit></app-project-edit> 
+    </div>
+ 
 
-  
