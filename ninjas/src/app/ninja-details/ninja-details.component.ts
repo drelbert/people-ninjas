@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+
 import { Ninja, ProjectDetails } from '../ninja';
 import { NinjaDataService } from '../ninja-data.service';
-import { switchMap } from 'rxjs/operators';
+
 
 
 @Component({
@@ -12,7 +12,10 @@ import { switchMap } from 'rxjs/operators';
 })
 export class NinjaDetailsComponent implements OnInit {
 
-
+constructor(
+  private ninjaDataService: NinjaDataService,
+ 
+  ) { }
 
  @Input() ninja: Ninja;
 //Object for submitted form data for passing around. 
@@ -27,21 +30,23 @@ export class NinjaDetailsComponent implements OnInit {
     projectDue: new Date()
   };
 
-  
-  constructor(
-    private ninjaDataService: NinjaDataService
-    ) { }
+//How might I add the update method in this component?
+//Could it exist like the create one?
+public updateProject: ProjectDetails = {
+  _id: '',
+  title: '',
+  updatedBy: '',
+  completedLastWeek: '',
+  upcomingWork: '',
+  issues: '',
+  projectDue: new Date()
+};
+
+ngOnInit(): void {
+
+   }
 
 
-  ngOnInit() { }
-  //Member for the project-edit component
-  public pageContent = {
-    header: {
-      title: 'Project Title',
-      strapline: ''
-    },
-    sidebar: ''
-  };
 
   public formVisible: boolean = false;
   public formError: string;

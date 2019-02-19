@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { NinjaDataService } from '../ninja-data.service';
-import { Ninja } from '../ninja';
+import { Ninja, ProjectDetails } from '../ninja';
 import { switchMap } from 'rxjs/operators';
 
 
@@ -19,6 +19,7 @@ export class DetailsPageComponent implements OnInit {
     ) { }
   //Defining a new member 'ninjaDetails' of Ninja.
   public ninjaDetails: Ninja;
+  public updateProject: ProjectDetails;
 
   ngOnInit(): void {
     this.route.paramMap
@@ -34,6 +35,7 @@ export class DetailsPageComponent implements OnInit {
       this.pageContent.header.title = ninjaDetails.name;
       
       this.pageContent.sidebar = `The Ninja rating for ${ninjaDetails.name} is "${ninjaDetails.ninjaRating}."`;
+
     });
   }
 
@@ -43,4 +45,5 @@ export class DetailsPageComponent implements OnInit {
     },
     sidebar: ''
   }
+
 }

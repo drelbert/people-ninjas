@@ -55,15 +55,35 @@
 
 
 
+//coding update and delete functions (10.1.4)
+    plan is 
+        get the ninja _id > projectDetails _id
+        use that to call the API to get the details for a specific project 
+        then display it on page 
+        provide form to put updates 
+
+    has logic 
+        use parent details page component 
+        pass that to 
+            ninja-details
+            
+            or does it need to happen in
+            project-edit 
+
+
+    step one 
+        create method to call the API to get a single projectDetail by ID 
+
+    data service 
+        method
+            putProjectByNinjaId
+        
+        const parameters 
+            ninjaId 
+            projectDetailsId
 
 
 
-//Git 
-    book 
-    https://git-scm.com/book/en/v2
-
-    pushing up to GitHub
-        https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/
 
 
 PICK UP Point 

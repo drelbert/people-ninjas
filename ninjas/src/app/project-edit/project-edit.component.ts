@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-
-import { NinjaDataService } from '../ninja-data.service';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Ninja, ProjectDetails } from '../ninja';
+import { NinjaDataService } from '../ninja-data.service';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-project-edit',
@@ -10,22 +11,30 @@ import { Ninja, ProjectDetails } from '../ninja';
 })
 export class ProjectEditComponent implements OnInit {
 
+  @Input() projectDetails: ProjectDetails;
 
-  @Input() editProjectDetails: ProjectDetails;
-  //Object for submitted form data for passing around. 
-  //Is a newProject, has properties, title, updatedBy, etc.
-   public doEditProjectDeatils: ProjectDetails = {
-      _id: '',
-      title: '',
-      updatedBy: '',
-      completedLastWeek: '',
-      upcomingWork: '',
-      issues: '',
-      projectDue: new Date()
-    };
   constructor() { }
 
   ngOnInit() {
   }
 
+  //Object for submitted form data for passing around. 
+  //Is an updated Project, has properties, title, updatedBy, etc.
+  public updatedProject: ProjectDetails = {
+    _id: '',
+    title: '',
+    updatedBy: '',
+    completedLastWeek: '',
+    upcomingWork: '',
+    issues: '',
+    projectDue: new Date()
+  };
 }
+
+
+
+  
+  
+
+
+ 

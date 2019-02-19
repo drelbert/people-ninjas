@@ -1,7 +1,11 @@
 <app-page-header [content]="pageContent.header"></app-page-header>
 <div class="row">
  
-<app-ninja-details [ninja]="ninjaDetails"></app-ninja-details>
+<app-ninja-details *ngIf="ninjaDetails" [ninja]="ninjaDetails"></app-ninja-details>
+
+<app-project-edit *ngIf="updatedProject" [projectDetails]="updatedProject"></app-project-edit>
 
 </div>
+
+
 

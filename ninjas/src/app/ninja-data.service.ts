@@ -32,15 +32,21 @@ export class NinjaDataService {
       .catch(this.handleError);
     }
 
-
-    //Method to update project
-
-
     //Method to post new project
     public addProjectByNinjaId(ninjaId: string, formData: ProjectDetails): Promise<ProjectDetails> {
       const url: string = `${this.apiBaseUrl}/ninjas/${ninjaId}/projectDetails`;
       return this.http  
         .post(url, formData)
+        .toPromise()
+        .then(response => response as ProjectDetails)
+        .catch(this.handleError);
+    }
+
+    //Method to update project
+    public putProjectDetailsById(ninjaId: string, projectDetailsId: string, formData: ProjectDetails): Promise<ProjectDetails> {
+      const url: string = `${this.apiBaseUrl}/ninjas/${ninjaId}/projectDetails/${projectDetailsId}`;
+      return this.http  
+        .put(url, formData)
         .toPromise()
         .then(response => response as ProjectDetails)
         .catch(this.handleError);
