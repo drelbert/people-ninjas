@@ -5,6 +5,7 @@ import { NinjaDataService } from '../ninja-data.service';
 
 
 
+
 @Component({
   selector: 'app-ninja-details',
   templateUrl: './ninja-details.component.html',
@@ -12,10 +13,7 @@ import { NinjaDataService } from '../ninja-data.service';
 })
 export class NinjaDetailsComponent implements OnInit {
 
-constructor(
-  private ninjaDataService: NinjaDataService,
- 
-  ) { }
+
 
  @Input() ninja: Ninja;
 //Object for submitted form data for passing around. 
@@ -30,26 +28,24 @@ constructor(
     projectDue: new Date()
   };
 
-//How might I add the update method in this component?
-//Could it exist like the create one?
-public updateProject: ProjectDetails = {
-  _id: '',
-  title: '',
-  updatedBy: '',
-  completedLastWeek: '',
-  upcomingWork: '',
-  issues: '',
-  projectDue: new Date()
-};
+
+
+public formVisible: boolean = false;
+public formError: string;
+
+constructor(
+  private ninjaDataService: NinjaDataService) { }
+
 
 ngOnInit(): void {
 
    }
-
-
-
-  public formVisible: boolean = false;
-  public formError: string;
+   
+  public pageContent = {
+    header : {
+      title: ''
+    }
+  }
 
 private formIsValid(): boolean {
   if (this.newProject.title && this.newProject.updatedBy && this.newProject.completedLastWeek && this.newProject.upcomingWork && this.newProject.issues && this.newProject.projectDue) {
@@ -65,7 +61,7 @@ public onProjectSubmit(): void {
     console.log(this.newProject);
     this.ninjaDataService.addProjectByNinjaId(this.ninja._id, this.newProject)
       .then(projectDetail => {
-        console.log('Review saved Jerr.', projectDetail);
+        console.log('Project saved Jerr.', projectDetail);
         this.ninja.projectDetails.unshift(projectDetail);
         this.resetAndHideProjectForm();
       });

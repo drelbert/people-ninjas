@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { NinjaDataService } from '../ninja-data.service';
+import { Ninja, ProjectDetails } from '../ninja';
+
 
 
 @Component({
@@ -9,14 +12,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ninjaDataService: NinjaDataService) { }
+
+ public ninjas: Ninja[];
+ public projectDetails: ProjectDetails[];
 
 
-  ngOnInit(){}
+  ngOnInit(){
+    this.getNinjas();
+  }
+
+  private getNinjas(): void {
+    this.ninjaDataService
+      .getNinjas()
+       .then(foundNinjas => this.ninjas = foundNinjas);
+  }
   
   public pageContent = {
     header: {
       title: 'Dashboard'
+    },
+    content: {
+      body: 'Total Ninjas...'
     }
   }
 }

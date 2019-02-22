@@ -21,7 +21,7 @@ export class ManageComponent implements OnInit {
 
   public pageContent = {
     header: {
-      title: 'Manage'
+      title: 'Your Ninjas'
     }
   }
 

@@ -15,8 +15,7 @@ import { InsightsSidebarComponent } from './insights-sidebar/insights-sidebar.co
 import { NinjaDetailsComponent } from './ninja-details/ninja-details.component';
 import { DetailsPageComponent } from './details-page/details-page.component';
 import { DueNextFirstPipe } from './due-next-first.pipe';
-import { ProjectEditComponent } from './project-edit/project-edit.component';
-
+import { ProjectsComponent } from './projects/projects.component';
 
 
 @NgModule({
@@ -31,7 +30,7 @@ import { ProjectEditComponent } from './project-edit/project-edit.component';
     NinjaDetailsComponent,
     DetailsPageComponent,
     DueNextFirstPipe,
-    ProjectEditComponent
+    ProjectsComponent
    
   ],
   imports: [
@@ -53,9 +52,9 @@ import { ProjectEditComponent } from './project-edit/project-edit.component';
         path: 'ninja/:ninjaId',
         component: DetailsPageComponent
       },
-      {
-        path: 'ninja/:ninjaId/projectDetails/:projectDetailsId',
-        component: ProjectEditComponent
+      { 
+        path: 'projects',
+        component: ProjectsComponent
       }
     ])
   ],

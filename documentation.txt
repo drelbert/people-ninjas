@@ -16,38 +16,43 @@
 
     update app.module 
         if there is a need for a new route 
-    
 
 
-
-
-
-//structure 
-    is framework
+//defining a class to give structure to data 
+    in Angular = class is used to define structure of data objects
+    think simple mongoose schema
+     is a list 
         has 
-            dashboard
-                page header 
-                theNinjas
-                insights (total projects, people, skill types)
-             
-            manage
-                page header 
-                CRUD 
+            item : data type value
+
+            typescript types 
+                stirng
+                number 
+                boolean
+                array 
+                etc
+
+//HTTP requests
+    HTTP req runs ansynchronously 
+    and return observables 
+        since need to wait until data is complete
+        need to convert observable to a promise 
+            observables return chuncks of data 
+            promises return a complete set 
+
+    So data service can make 
+        HTTP req and return 
+            promises 
+
+//Creating the method to get data 
+    import the service into the component 
+        Note ../ means "go up a level in the folder structure"
+    
+    inject it into the service 
+        contructor(private service: Service) { }
 
 
-            people cards 
-                has 
-                    people
-                        skills 
-                        projects
 
-            manage 
-                has 
-                    CRUD 
-                        people 
-                        skills 
-                        projects 
-            
 //mongo-mongoose 
 
 
@@ -55,32 +60,6 @@
 
 
 
-//coding update and delete functions (10.1.4)
-    plan is 
-        get the ninja _id > projectDetails _id
-        use that to call the API to get the details for a specific project 
-        then display it on page 
-        provide form to put updates 
-
-    has logic 
-        use parent details page component 
-        pass that to 
-            ninja-details
-            
-            or does it need to happen in
-            project-edit 
-
-
-    step one 
-        create method to call the API to get a single projectDetail by ID 
-
-    data service 
-        method
-            putProjectByNinjaId
-        
-        const parameters 
-            ninjaId 
-            projectDetailsId
 
 
 

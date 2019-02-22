@@ -19,7 +19,7 @@ export class DetailsPageComponent implements OnInit {
     ) { }
   //Defining a new member 'ninjaDetails' of Ninja.
   public ninjaDetails: Ninja;
-  public updateProject: ProjectDetails;
+
 
   ngOnInit(): void {
     this.route.paramMap

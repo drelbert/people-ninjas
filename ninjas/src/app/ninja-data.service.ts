@@ -13,6 +13,9 @@ export class NinjaDataService {
 
   private apiBaseUrl = 'http://localhost:3000/api';
 
+    //Method to get count of Ninjas in collection.
+
+
     //Method that uses the HttpClient to return an array of ninjas.
     public getNinjas(): Promise<Ninja[]> {
       const url: string = `${this.apiBaseUrl}/ninjas`;
@@ -22,6 +25,7 @@ export class NinjaDataService {
       .then(response => response as Ninja[])
       .catch(this.handleError);
     }
+    
     //Method to get ninja details 
     public getNinjaById(ninjaId: string): Promise<Ninja> { 
       const url: string = `${this.apiBaseUrl}/ninjas/${ninjaId}`;
@@ -42,15 +46,6 @@ export class NinjaDataService {
         .catch(this.handleError);
     }
 
-    //Method to update project
-    public putProjectDetailsById(ninjaId: string, projectDetailsId: string, formData: ProjectDetails): Promise<ProjectDetails> {
-      const url: string = `${this.apiBaseUrl}/ninjas/${ninjaId}/projectDetails/${projectDetailsId}`;
-      return this.http  
-        .put(url, formData)
-        .toPromise()
-        .then(response => response as ProjectDetails)
-        .catch(this.handleError);
-    }
 
     private handleError(error: any): Promise<any> {
       console.error('Well, this is embarassing, something is wrong', error);
