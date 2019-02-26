@@ -51,6 +51,96 @@
     inject it into the service 
         contructor(private service: Service) { }
 
+//Building a way to present data in dashboard 
+    count number of ninjas 
+    count number of projects 
+    get all ninja/skills
+    get top ratedd ninja by ninja/rating
+
+
+
+questions 
+    Do I use a method in dataService?
+    maybe develop a count method?
+    then call it in the funnction in dashbaord.ts?
+
+     can i just convert a save() method to count()?
+
+    Is the solution a custom pipe?
+
+
+Services 
+    is 
+        for saving and fetching data 
+
+
+
+
+//lesson learned
+
+
+//service -'get' data workflow(Clive version)
+    one 
+        create service 
+            build CRUD methods 
+            import the right classes 
+
+    
+    two 
+        ng generate the component 
+            as needed add content 
+
+    three 
+        set up and define the routes with URL paramters
+        add component route in app.module.ts 
+    
+    four 
+        use URL parameters 
+            build method in the data service 
+    
+    five 
+        import the service into component 
+            add a local instance in the contructor 
+    
+    six 
+        use the URL parameters in the component 
+            import the right functionality 
+                eg, ActivatedRoute, switchMap, etc
+            make the activated route avail to the component 
+    
+        six.one 
+            the complicated stuff 
+                6 steps to get the desired data from the URL param and turn it into data for the view from the API 
+            
+    seven 
+        pass that data to the nested component 
+            three steps 
+                add class member 
+                pass data into child with property binding 
+                update the component to accept the incoming data 
+
+    eight 
+        build nested component page view  
+
+    
+
+TODO reread ch 10 compare/document the build workflow for other methods
+
+
+//service - 'update' data workflow(angular.io version)
+    one 
+        add button 
+            in component.html
+    
+    two 
+        add save() method 
+            in component.ts
+    
+    three 
+        add the update() method 
+            in the service.ts 
+
+
 
 
 //mongo-mongoose 

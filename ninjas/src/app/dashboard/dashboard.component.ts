@@ -15,7 +15,7 @@ export class DashboardComponent implements OnInit {
   constructor(private ninjaDataService: NinjaDataService) { }
 
  public ninjas: Ninja[];
- public projectDetails: ProjectDetails[];
+
 
 
   ngOnInit(){
@@ -28,6 +28,7 @@ export class DashboardComponent implements OnInit {
        .then(foundNinjas => this.ninjas = foundNinjas);
   }
   
+
   public pageContent = {
     header: {
       title: 'Dashboard'
@@ -37,3 +38,13 @@ export class DashboardComponent implements OnInit {
     }
   }
 }
+
+
+//Example of getting heroes 1-5 from db.
+/*
+getHeroes(): void {
+  this.heroService.getHeroes()
+    .subscribe(heroes => this.heroes = heroes.slice(1, 5));
+}
+
+*/

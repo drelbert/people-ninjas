@@ -14,7 +14,7 @@
 
 <h4><b>Projects:</b></h4>
   <div class="row">
-    <a *ngFor="let project of ninja.projectDetails" class="col 4"> 
+    <a *ngFor="let project of ninja.projectDetails | dueNextFirst" class="col 4"> 
     <div class="column">
         <div class="card" >
             <h5 class="card-header">

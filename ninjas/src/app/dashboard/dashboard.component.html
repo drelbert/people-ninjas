@@ -1,18 +1,26 @@
 <app-page-header [content]="pageContent.header"></app-page-header>
 
-<h3> Ninja Count  </h3>
+<h3> Ninja by Rating  </h3>
 
-<div class="row">
-    <a *ngFor="let ninja of ninjas" class="col-1-4">
-    <div class="column">
-      <div class="card" >
-      <h4>
-        <a routerLink="/ninja/{{ninja._id}}">{{ninja.name}}</a>
-      </h4>
+    <li *ngFor="let ninja of ninjas">
+      {{ ninja.name }}
+      {{ ninja.ninjaRating }}
+    </li>
+
+
+  <h3> Ninja Skills </h3>
+    <li *ngFor="let ninja of ninjas">
+      {{ ninja.name }}
+      <h5>{{ ninja.skills }}</h5>
+    </li>
+
+
+    <app-insights-sidebar class="col-12 col-md-4"></app-insights-sidebar>
+
+    <div>  <p *ngIf="ninjaRating > 3">Ninjas with 3 or higher rating</p>
     </div>
-  </div>
-  </a>
-</div>
+  
+
 
 
 

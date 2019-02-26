@@ -14,5 +14,13 @@ export class InsightsSidebarComponent implements OnInit {
   ngOnInit() {}
 
 
+  public pageContent = {
+    header: {
+      title: 'Insights Sidebar Here'
+    },
+    content: {
+      body: 'TODO...'
+    }
+  }
   }
 

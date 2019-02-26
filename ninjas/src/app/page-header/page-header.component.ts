@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./page-header.component.css']
 })
 export class PageHeaderComponent implements OnInit {
-
+  //Defining the property class to accept content as an input.  
   @Input() content: any;
 
   constructor() { }
